@@ -1,4 +1,4 @@
-# baeSystem
+# BAE System
 
 ## Steps to install
 - run following command
