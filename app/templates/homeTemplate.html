@@ -1,0 +1,31 @@
+<div>
+	<header-directive headertext="BAE System"></header-directive>
+	<div class="content">
+		<div class="row">
+			
+			<div class="col-md-6 list-section">
+
+				<div ng-repeat="(i, country) in groupLocations">
+					<h4>{{country.countryName}}</h4>
+					<div ng-repeat="(z, city) in country" ng-if="z != 'countryName'">
+						<h5>{{city.cityName}}</h5>
+						<div class="list-group">
+							<a class="list-group-item" 
+								ng-repeat="address in city.cities" 
+								href="#" 
+								ng-click="plotMap($event, address, city.cities)">
+								{{address.address}} <br /> {{address.postalCode}}
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+  			<div class="col-md-6">
+  				<gmap locations="allLocations"></gmap>
+  			</div>
+
+		</div>
+	</div>
+</div>
